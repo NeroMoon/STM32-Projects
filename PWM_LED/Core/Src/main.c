@@ -99,10 +99,7 @@ int main(void)
   {
 	for (uint16_t i = 0; i < UINT16_MAX; i++)
 	{
-	  if (i < UINT16_MAX / 2)
-	  	TIM17->CCR1 = i;
-	  else
-		TIM17->CCR1 = UINT16_MAX - i;
+	  __HAL_TIM_SET_COMPARE(&htim17, TIM_CHANNEL_1, i < UINT16_MAX / 2 ? i : UINT16_MAX - i);
 
 	  for (uint16_t delay = 0; delay < 10; delay++);
 	}
