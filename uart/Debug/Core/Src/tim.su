@@ -1,0 +1,13 @@
+../Drivers/STM32WLxx_HAL_Driver/Inc/stm32wlxx_ll_bus.h:449:22:LL_AHB2_GRP1_EnableClock	24	static
+../Drivers/STM32WLxx_HAL_Driver/Inc/stm32wlxx_ll_bus.h:914:22:LL_APB1_GRP1_EnableClock	24	static
+../Drivers/STM32WLxx_HAL_Driver/Inc/stm32wlxx_ll_bus.h:1018:22:LL_APB1_GRP1_DisableClock	16	static
+../Drivers/STM32WLxx_HAL_Driver/Inc/stm32wlxx_ll_bus.h:1303:22:LL_APB2_GRP1_EnableClock	24	static
+../Drivers/STM32WLxx_HAL_Driver/Inc/stm32wlxx_ll_bus.h:1351:22:LL_APB2_GRP1_DisableClock	16	static
+../Core/Src/tim.c:32:6:MX_TIM1_Init	104	static
+../Core/Src/tim.c:99:6:MX_TIM2_Init	48	static
+../Core/Src/tim.c:143:6:MX_TIM17_Init	88	static
+../Core/Src/tim.c:201:6:HAL_TIM_PWM_MspInit	16	static
+../Core/Src/tim.c:228:6:HAL_TIM_Base_MspInit	16	static
+../Core/Src/tim.c:243:6:HAL_TIM_MspPostInit	40	static
+../Core/Src/tim.c:312:6:HAL_TIM_PWM_MspDeInit	16	static
+../Core/Src/tim.c:339:6:HAL_TIM_Base_MspDeInit	16	static
