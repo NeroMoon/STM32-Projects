@@ -102,22 +102,6 @@ int main(void)
   HAL_UART_Receive_IT(&huart2, (uint8_t *)rx_buff, 4);
   while (1)
   {
-	switch (rx_buff[0])
-	{
-	  case '1':
-	    TIM1->CCR3 = atoi((uint8_t *)rx_buff + 1) * UINT16_MAX / 100;
-		break;
-	  case '2':
-		TIM17->CCR1 = atoi((uint8_t *)rx_buff + 1) * UINT16_MAX / 100;
-		break;
-	  case '3':
-		TIM2->CCR4 = atoi((uint8_t *)rx_buff + 1) * UINT16_MAX / 100;
-		break;
-	  default:
-		break;
-	}
-	HAL_Delay(50);
-	HAL_UART_Receive_IT(&huart2, (uint8_t *)rx_buff, 4);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -174,7 +158,25 @@ void SystemClock_Config(void)
 }
 
 /* USER CODE BEGIN 4 */
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
+{
+  switch (rx_buff[0])
+  {
+    case '1':
+	  TIM1->CCR3 = atoi((uint8_t *)rx_buff + 1) * UINT16_MAX / 100;
+	  break;
+    case '2':
+	  TIM17->CCR1 = atoi((uint8_t *)rx_buff + 1) * UINT16_MAX / 100;
+	  break;
+    case '3':
+	  TIM2->CCR4 = atoi((uint8_t *)rx_buff + 1) * UINT16_MAX / 100;
+	  break;
+    default:
+	  break;
+  }
 
+  HAL_UART_Receive_IT(&huart2, (uint8_t *)rx_buff, 4);
+}
 /* USER CODE END 4 */
 
 /**
